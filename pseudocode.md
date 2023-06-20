@@ -39,7 +39,7 @@ MoSCoW
         -if I were to use objects then using key/value pairs would allow for readability within checkWin function, but would that make it difficult to evaluate for appropiate win function?
         -using array methods would make for ideal evaluation process, but would I need multiple arrays for checkWin?
             -if i do use an array would I be able to add additional values with recordMove? Do I need to add additional values or can one replace another?
-        -think about elements in Atomic Design - how do the peices all fit together?
+        -think about elements in Atomic Design - how do the peices all fit together? (visually, and functionally)
 
 BEGIN
 
