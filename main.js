@@ -28,7 +28,7 @@ const makeSquareElem = (squareNumber) => {
   squareElement.addEventListener(
     "click",
     (event) => {
-      const { target } = event;
+      const { target } = event; //allows for player input based on currentPlayer
       target.textContent = currentPlayer;
       gameBoard[squareNumber] = currentPlayer;
       checkBoard();
@@ -61,6 +61,7 @@ const checkBoard = () => {
   ];
   //allows for checking of winning states based on turn input within square index
   for (let winState of winningStates) {
+    //checks values of winstate by runnning through winstates
     const [position1, position2, position3] = winState; //frame work for checking
     if (
       gameBoard[position1] !== "" &&

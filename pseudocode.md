@@ -119,3 +119,7 @@ END
 POST CODE NOTES
 
     -while exploring how to display state most effectively I came across some documention (will link if found) that showed state as post reset button.  Rather than button undoing, the button rather clears game, then re calls the makeGameBoardElement to wipe the page.  This is also used to start the page as the function from start would be the same as it would from end.  ResetGame allows for the page to initialize and re set.
+    -due to the way I coded the init as well as the reset function it made it so that I couldnt add a game tracker, and I also forgot to implement the player turn tracker so outside of first move, there is no way to know before starting.
+    -due to issues withe naming, I used the simplest possible names that allowed for proper readability, even if longer than anticipated.
+    -Main struggles continue being the implementation of the code I learned and getting into the sandbox without googling every possible function and looking through as many resources as I can find.
+    -While I am satisfied with the outcome I am not satisfied with the process
