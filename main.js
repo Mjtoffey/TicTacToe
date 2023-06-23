@@ -7,7 +7,7 @@ let gameBoardElem;
 // creates title for page
 const createTitle = (title) => {
   const titleElem = document.createElement("h1");
-
+  //title is called here but text content dislayed at bottom
   titleElem.textContent = title;
 
   document.body.appendChild(titleElem);
@@ -20,11 +20,11 @@ const makeGameBoardElem = () => {
 
   return gameBoardElem;
 };
-
+//creates individual squares for game board
 const makeSquareElem = (squareNumber) => {
   const squareElement = document.createElement("div");
   squareElement.classList.add("game-square");
-
+  //adds functionality to
   squareElement.addEventListener(
     "click",
     (event) => {
@@ -34,12 +34,12 @@ const makeSquareElem = (squareNumber) => {
       checkBoard();
       switchPlayer();
     },
-    { once: true }
+    { once: true } //once button is clicked, removes click
   );
   return squareElement;
 };
 
-// Game Control
+// loopps through player index to simulate turns
 const switchPlayer = () => {
   if (currentPlayer === players[0]) {
     currentPlayer = players[1];
@@ -47,12 +47,8 @@ const switchPlayer = () => {
     currentPlayer = players[0];
   }
 };
-
+//displays all winning combos in arr of arrs to allow for checking of win based on turn
 const checkBoard = () => {
-  // gameBoard
-  // ['0', '1', '2']
-  // ['3', '4', '5']
-  // ['6', '7', '8']
   const winningStates = [
     [0, 1, 2],
     [3, 4, 5],
@@ -63,25 +59,25 @@ const checkBoard = () => {
     [0, 4, 8],
     [2, 4, 6],
   ];
-
+  //allows for checking of winning states based on turn input within square index
   for (let winState of winningStates) {
-    const [position1, position2, position3] = winState;
+    const [position1, position2, position3] = winState; //frame work for checking
     if (
       gameBoard[position1] !== "" &&
-      gameBoard[position1] === gameBoard[position2] &&
+      gameBoard[position1] === gameBoard[position2] && //all 3 must be same "input value"
       gameBoard[position1] === gameBoard[position3]
     ) {
-      completeGame(`${gameBoard[position1]} player Wins!`);
+      completeGame(`${gameBoard[position1]} player Wins!`); //message to display
     }
   }
-
+  //if all squares are used it will turn to draw
   const allSquaresUsed = gameBoard.every((square) => square !== "");
 
   if (allSquaresUsed) {
-    completeGame(`It's a draw!`);
+    completeGame(`It's a tie!`);
   }
 };
-//creates overlay element
+//creates overlay element to display winner/tie.  refers to complete game
 const completeGame = (message) => {
   const overlayElem = document.createElement("div");
   overlayElem.style.position = "fixed";
@@ -95,14 +91,14 @@ const completeGame = (message) => {
   overlayElem.style.justifyContent = "center";
   overlayElem.style.alignItems = "center";
   overlayElem.style.textAlign = "center";
-
+  //adds text content and
   const messageElem = document.createElement("h2");
   messageElem.textContent = message;
   messageElem.style.color = "white";
   messageElem.style.fontSize = "100px";
 
   overlayElem.appendChild(messageElem);
-
+  //creates button to reset the game
   const restartButtonElem = document.createElement("button");
   restartButtonElem.textContent = "Restart";
   restartButtonElem.style.backgroundColor = "transparent";
@@ -132,7 +128,7 @@ const resetGame = () => {
   for (let row = 0; row < 9; row++) {
     gameBoardElem.appendChild(makeSquareElem(row));
   }
-
+  //refers to player arr and allows for turn to switch "player" and recieve appropriate input based on turn
   currentPlayer = players[0];
   gameBoard.fill("");
 

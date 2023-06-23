@@ -115,3 +115,7 @@ FUNCTIONS
             -then alert tie
 
 END
+
+POST CODE NOTES
+
+    -while exploring how to display state most effectively I came across some documention (will link if found) that showed state as post reset button.  Rather than button undoing, the button rather clears game, then re calls the makeGameBoardElement to wipe the page.  This is also used to start the page as the function from start would be the same as it would from end.  ResetGame allows for the page to initialize and re set.
