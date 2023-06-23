@@ -93,7 +93,7 @@ FUNCTIONS
         -checkWin accepts input
         -trackTurn accepts onClick
 
-    3. tackTurn (Loop)
+    3. trackTurn (Loop)
         -display current player turn
             -with current "character"
         -if onClick occurs
