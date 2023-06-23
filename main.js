@@ -13,12 +13,12 @@ const createTitle = (title) => {
   document.body.appendChild(titleElem);
 };
 //creates overall game board element
-const makeGameBoardElement = () => {
-  const gameBoardElement = document.createElement("div");
+const makeGameBoardElem = () => {
+  const gameBoardElem = document.createElement("div");
 
-  gameBoardElement.classList.add("game-board");
+  gameBoardElem.classList.add("game-board");
 
-  return gameBoardElement;
+  return gameBoardElem;
 };
 
 const makeSquareElem = (squareNumber) => {
@@ -81,7 +81,7 @@ const checkBoard = () => {
     completeGame(`It's a draw!`);
   }
 };
-
+//creates overlay element
 const completeGame = (message) => {
   const overlayElem = document.createElement("div");
   overlayElem.style.position = "fixed";
@@ -120,15 +120,15 @@ const completeGame = (message) => {
   document.body.appendChild(overlayElem);
 };
 
-// function to follow reset game function
+// function to follow reset game function as well as initialize game state
 const resetGame = () => {
   if (gameBoardElem) {
     //removes old board
     document.body.removeChild(gameBoardElem);
   }
-
+  //calls game board from above and
   gameBoardElem = makeGameBoardElem();
-
+  //for loop to generate total squares
   for (let row = 0; row < 9; row++) {
     gameBoardElem.appendChild(makeSquareElem(row));
   }

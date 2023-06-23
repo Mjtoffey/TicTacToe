@@ -10,7 +10,7 @@
   h1 {
 	font-size: 50px;
   }
-  
+  /*creates overall game board to filled with content*/
   .game-board {
 	margin: 0 auto;
 	height: 450px;
@@ -20,9 +20,9 @@
 	grid-template-rows: 150px 150px 150px;
 	justify-items: center;
 	align-items: center;
-	background-color: aqua;
+	background-color: goldenrod;
   }
-  
+  /*adds style to board, ignoring left hand side of document to allow for classic styling*/
   .game-square {
 	display: flex;
 	justify-content: center;
@@ -32,18 +32,12 @@
 	width: 100%;
 	border-right: 1px solid black;
 	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	border-left: 1px solid black;
 	cursor: pointer;
   }
-  
+  /*adds hover to square as well as color to indicate user location*/
   .game-square:hover {
-	background-color: lightgray;
-  }
-  
-  .game-square:nth-child(3n) {
-	border-right: none;
-  }
-  
-  .game-square:nth-child(n + 7) {
-	border-bottom: none;
+	background-color: lavender;
   }
   
