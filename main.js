@@ -1,5 +1,5 @@
 // Game State
-const players = ["O", "X"];
+const players = ["X", "O"];
 const gameBoard = ["", "", "", "", "", "", "", "", ""];
 let currentPlayer;
 let gameBoardElem;
